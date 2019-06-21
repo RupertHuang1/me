@@ -11,13 +11,13 @@ import platform
 # I think this will print "hello! Let's get started" by calling the print function.
 print("hello! Let's get started")  # it printed "hello! Let's get started"
 
-some_words = ['what', 'does', 'this', 'line', 'do', '?']
+some_words = ['word', 'x']
 
 for word in some_words:
-    print(word)
+    print("what")
 
 for x in some_words:
-    print(x)
+    print("means")
 
 print(some_words)
 
