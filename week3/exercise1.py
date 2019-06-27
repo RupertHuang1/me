@@ -52,27 +52,33 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    
     while True:
-        num = input("enter a number between {} and {}".format(low,high))
-        if int(num) > low and int(num) < high:
-            return num
+        t = input("enter a number between {} and {}".format(low,high))
+        t = int(t)
+        if t < high and t > low:
+            return t
+
 
 def not_number_rejector(message):
+
     """Ask for a number repeatedly until actually given one.
 
     Ask for a number, and if the response is actually NOT a number 
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    while answer = False
-        num = input(massage)
-        print(num)
-        answer = true
-    try:
-        print("Hello world")
-    except Exception:
-        
+    answer = False
+    while answer != True:
+        t = input ('message')
+        try:
+           val = int('t')
+           print('t')
+           answer = True
+           return t 
+        except ValueError:
+            answer = False
+
+     
 
 
 def super_asker(low, high):
@@ -83,7 +89,13 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    answer = False
+    while answer != True:
+        num1 = not_number_rejector("Insert a number that is larger than " + str(low) + "and less than")
+        if int(num1) > low and int(num1) < high:
+            answer = True
+    return num1
+
 
 
 if __name__ == "__main__":
@@ -102,3 +114,6 @@ if __name__ == "__main__":
     not_number_rejector("Enter a number: ")
     print("\nsuper_asker")
     super_asker(33, 42)
+
+
+#%%
