@@ -19,7 +19,6 @@ if LOCAL != CWD:
 
 def get_some_details():
     """Parse some JSON.
-
     In lazyduck.json is a description of a person from https://randomuser.me/
     Read it in and use the json library to convert it to a dictionary.
     Return a new dictionary that just has the last name, password, and the
@@ -41,7 +40,6 @@ def get_some_details():
 
 def wordy_pyramid():
     """Make a pyramid out of real words.
-
     There is a random word generator here:
     http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=10&maxLength=10&limit=1
     The arguments that the generator takes is the minLength and maxLength of the word
@@ -77,34 +75,30 @@ def wordy_pyramid():
     pass
 
 
-def wunderground():
-    """Find the weather station for Sydney.
-
-    Get some json from a request parse it and extract values.
-    Sign up to https://www.wunderground.com/weather/api/ and get an API key
+def pokedex(low=1, high=5):
+    """ Return the name, height and weight of the tallest pokemon in the range low to high.
+    Low and high are the range of pokemon ids to search between.
+    Using the Pokemon API: https://pokeapi.co get some JSON using the request library
+    (a working example is filled in below).
+    Parse the json and extract the values needed.
+    
     TIP: reading json can someimes be a bit confusing. Use a tool like
          http://www.jsoneditoronline.org/ to help you see what's going on.
     TIP: these long json accessors base["thing"]["otherThing"] and so on, can
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
-    base = "http://api.wunderground.com/api/"
-    api_key = "YOUR KEY - REGISTER TO GET ONE"
-    country = "AU"
-    city = "Sydney"
-    template = "{base}/{key}/conditions/q/{country}/{city}.json"
-    url = template.format(base=base, key=api_key, country=country, city=city)
+    template = "https://pokeapi.co/api/v2/pokemon/{id}"
+
+    url = template.format(base=base, id=5)
     r = requests.get(url)
     if r.status_code is 200:
         the_json = json.loads(r.text)
-        obs = the_json["current_observation"]
-
-    return {"state": None, "latitude": None, "longitude": None, "local_tz_offset": None}
+    return {"name": None, "weight": None, "height": None}
 
 
 def diarist():
     """Read gcode and find facts about it.
-
     Read in Trispokedovetiles(laser).gcode and count the number of times the
     laser is turned on and off. That's the command "M10 P1".
     Write the answer (a number) to a file called 'lasers.pew' in the week4 directory.
@@ -114,6 +108,7 @@ def diarist():
          might be why. Try in rather than == and that might help.
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
+    TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
     pass
 
