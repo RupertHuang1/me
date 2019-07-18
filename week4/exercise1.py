@@ -76,7 +76,7 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-        keyo=" 5586ih53eyafp9iaztwo57zpldgdwwftvv493ppcx0qhno868"
+    keyo=" 5586ih53eyafp9iaztwo57zpldgdwwftvv493ppcx0qhno868"
     url = " http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={min}}&maxLength={max}&limit={limit}"
     mino = 3
     maxo = 20
