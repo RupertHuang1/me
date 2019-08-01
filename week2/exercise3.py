@@ -1,16 +1,18 @@
 # -*- coding: UTF-8 -*-
 """Modify each function until the tests pass."""
 
-#%%
+
 def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
+    answer = None
     if a_number % 2 == 0:
-        return 'False'
+        answer = False
     else:
-        return 'True'
+        answer = True
+    return answer
         
 
 
@@ -32,14 +34,15 @@ def fix_it(moves=True, should_move=True):
     """
     if moves == True:
         if should_move == True:
-            return 'Duct Tape'
-        else:
-            return 'No Problem'
-    else: 
+            return "No Problem"
+        else:   
+            return "Duct Tape"
+    else:
         if should_move == True:
-             return 'WD-40'
+            return "WD-40"
         else:
-            return 'No Problem'
+            return "No Problem"
+
 
 
 
@@ -51,7 +54,7 @@ def loops_1a( ):
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
     list1=[]
-    for num in range(11):
+    for a in range(10):
         list1.append('*')
         return list1  
 
@@ -63,8 +66,8 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    list=[]
-    if number_of_items <=5:
+    list = []
+    for a in range (number_of_items)
         list.append(symbol)
     return list
 
@@ -237,7 +240,19 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    list1 = []
+    for i in range (1,6):
+        list2 = []
+        for a in range (1,10):
+            x = 0
+            y = 5
+            if a > y - i and a < y + i:
+                list2.append("*")
+            else:
+                list2.append(" ")
+            x = x + 1
+        list1.append(list2)
+    return list1    
 
 
 def lp(some_kind_of_list, exercise_name):

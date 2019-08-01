@@ -67,18 +67,17 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    answer = False
-    while answer != True:
-        t = input ('message')
+    while True:
         try:
-           val = int('t')
-           print('t')
-           answer = True
-           return t 
-        except ValueError:
-            answer = False
-
-     
+            print(message)
+            not_number_input = int(input())
+        except Exception:
+            pass
+        else:
+            break
+        
+    return not_number_input
+            
 
 
 def super_asker(low, high):
@@ -116,4 +115,4 @@ if __name__ == "__main__":
     super_asker(33, 42)
 
 
-#%%
+
