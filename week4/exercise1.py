@@ -78,8 +78,6 @@ def wordy_pyramid():
     """
     key = "91xyilewfpmpj4yxy8czdk62875bkkljjdqchl0zkklspme95"
     template = "http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={minLength}&maxLength={maxLength}&limit={limit}"
-    # http://api.wordnik.com/v4/words.json/randomWords?api_key=91xyilewfpmpj4yxy8czdk62875bkkljjdqchl0zkklspme95&minLength=3&maxLength=20&limit=18
-    minLength = 3
     maxLength = 20
     limit = 1
     step = 2
