@@ -83,36 +83,7 @@ def wordy_pyramid():
     step = 2
     pyramid_list = []
     
-    for length in range(minLength, maxLength, step):
-        time.sleep(1)
-        url = template.format(base=template, minLength=length, maxLength=length, limit=limit, key=key)
-        r = requests.get(url)
-        if r.status_code is 200:
-            the_json = json.loads(r.text)
-            # print(the_json)
-            # print(list(a.values()))
-            a = the_json[0]["word"]
-            # print(a)
-            pyramid_list.append(a)
     
-    for item in pyramid_list:
-        print(item)
-
-    for length in range(maxLength, minLength, -step):
-        time.sleep(1)
-        url = template.format(base=template, minLength=length, maxLength=length, limit=limit, key=key)
-        r = requests.get(url)
-        if r.status_code is 200:
-            the_json = json.loads(r.text)
-            # print(the_json)
-            # print(list(a.values()))
-            a = the_json[0]["word"]
-            # print(a)
-            pyramid_list.append(a)
-
-    for item in pyramid_list:
-        print(item)
-
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
     Low and high are the range of pokemon ids to search between.
