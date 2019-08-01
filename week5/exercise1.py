@@ -70,8 +70,8 @@ def calculate_hypotenuse(base, height):
 
 
 def calculate_area(base, height):
-    ca = (base * height) / 2
-    return ca
+    a = (base * height) / 2
+    return a
 
 
 def calculate_perimeter(base, height):
