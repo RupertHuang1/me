@@ -76,26 +76,44 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    keyo=" 5586ih53eyafp9iaztwo57zpldgdwwftvv493ppcx0qhno868"
-    url = " http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={min}}&maxLength={max}&limit={limit}"
-    mino = 3
-    maxo = 20
-    limito = 2
-    lengtho = min
-    wordlist = []
-    while length <= max:
-        fullurl=url.format(key=keyo, min=mino, max=maxo, limit=limito)
-        pull = requests.get(fullurl)
-        for i in range(min,max, limit):
-            if r.status_code is 200:
-                if i < max:
-                    wordlist.append(pull)
-            else:
-                for o in range(max,min, -limit):
-                    wordlist.append(pull)
-    return(wordlist)
-    pass
+    key = "91xyilewfpmpj4yxy8czdk62875bkkljjdqchl0zkklspme95"
+    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={minLength}&maxLength={maxLength}&limit={limit}"
+    # http://api.wordnik.com/v4/words.json/randomWords?api_key=91xyilewfpmpj4yxy8czdk62875bkkljjdqchl0zkklspme95&minLength=3&maxLength=20&limit=18
+    minLength = 3
+    maxLength = 20
+    limit = 1
+    step = 2
+    pyramid_list = []
+    
+    for length in range(minLength, maxLength, step):
+        time.sleep(1)
+        url = template.format(base=template, minLength=length, maxLength=length, limit=limit, key=key)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            # print(the_json)
+            # print(list(a.values()))
+            a = the_json[0]["word"]
+            # print(a)
+            pyramid_list.append(a)
+    
+    for item in pyramid_list:
+        print(item)
 
+    for length in range(maxLength, minLength, -step):
+        time.sleep(1)
+        url = template.format(base=template, minLength=length, maxLength=length, limit=limit, key=key)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            # print(the_json)
+            # print(list(a.values()))
+            a = the_json[0]["word"]
+            # print(a)
+            pyramid_list.append(a)
+
+    for item in pyramid_list:
+        print(item)
 
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
@@ -112,11 +130,22 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(base=base, id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    weight = 1
+    height = 1
+    name = ""
+    for poke in range(low,high):
+        url = template.format(base=template, id=poke)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            if the_json["height"] > height:
+                height = the_json["height"]
+                weight = the_json["weight"]
+                name = the_json["name"]
+
+    
+    return {"name": name, "weight": weight, "height": height}
+
 
 
 def diarist():

@@ -29,7 +29,7 @@ def do_bunch_of_bad_things():
     print("Getting ready to start in 3")
     print("Getting ready to start in 2")
     print("Getting ready to start in 1")
-    print("Let's go!")
+    print("Send it!")
 
     triangle = {"base": 3, "height": 4}
     triangle["hypotenuse"] = triangle["base"] ** 2 + triangle["height"] ** 2
