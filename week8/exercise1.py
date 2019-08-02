@@ -86,10 +86,11 @@ def pet_filter(letter="a"):
             "siamese fighting fish","fancy rat and lab rat","mink","red fox",
             "hedgehog","guppy",]
     # fmt: on
-    for i in pets :
-        if 'a' in i: 
-            return i
-
+    w = []
+    for name in pets :
+        if letter in name: 
+            return name
+    return w
 
 def best_letter_for_pets():
     """Return the letter that is present at least once in the most pet names.
