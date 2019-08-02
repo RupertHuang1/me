@@ -88,7 +88,7 @@ def pet_filter(letter="a"):
     # fmt: on
     for name in pets :
         if letter in name: 
-            print(name)
+            prin (name)
     return pet_filter
 
 
