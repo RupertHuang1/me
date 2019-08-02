@@ -5,7 +5,7 @@
 def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
-    Look into modulo division using the '%' operator as one way of doing this.
+    Look into modulo divi~ion using the '%' operator as one way of doing this.
     """
     answer = None
     if a_number % 2 == 0:

@@ -67,7 +67,7 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-    result = ''
+    result = ''~~
     for ch in input_string:
         result =  result + ch + '|'
     a = '|' + result
