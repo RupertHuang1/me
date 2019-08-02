@@ -67,9 +67,11 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-
-    return ""
-
+    result = ''
+    for ch in input_string:
+        result =  result + ch + '|'
+    a = '|' + result
+    return a  
 
 def pet_filter(letter="a"):
     """Return a list of pets whose name contains the character 'letter'."""
@@ -85,6 +87,7 @@ def pet_filter(letter="a"):
             "hedgehog","guppy",]
     # fmt: on
 
+    for a 
     return []
 
 
