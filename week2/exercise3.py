@@ -67,7 +67,7 @@ def loops_1c(number_of_items=5, symbol="#"):
     E.g.: ['#', '#', '#', '#', '#']
     """
     list = []
-    for a in range (number_of_items)
+    for a in range (number_of_items) :
         list.append(symbol)
     return list
 
