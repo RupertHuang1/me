@@ -65,7 +65,7 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
-    hypotenuse = (base ** 2 + heigt **2) ** (1/2)
+    hypotenuse = (base ** 2 + height **2) ** (1/2)
     return hypotenuse
 
 
